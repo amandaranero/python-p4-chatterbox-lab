@@ -9,9 +9,9 @@ from models import db, Message
 
 fake = Faker()
 
-usernames = [fake.first_name() for i in range(4)]
-if "Duane" not in usernames:
-    usernames.append("Duane")
+# usernames = [fake.first_name() for i in range(4)]
+# if "Duane" not in usernames:
+#     usernames.append("Duane")
 
 def make_messages():
 
@@ -22,7 +22,7 @@ def make_messages():
     for i in range(20):
         message = Message(
             body=fake.sentence(),
-            username=rc(usernames),
+            username=fake.name(),
         )
         messages.append(message)
 
